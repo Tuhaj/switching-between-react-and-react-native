@@ -1,4 +1,4 @@
-# WarsawJS Slides: Template
+# Switching between React and React Native [EN]
 
 <img src="./vendors/shower-warsawjs/images/logo.svg" width="400" />
 
