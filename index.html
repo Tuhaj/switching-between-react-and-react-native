@@ -70,7 +70,22 @@
         <p>We know how to write in React!</p>
         <p>Know how to write action creators and reducers</p>
         <p>Have concepts for functional components, class components and containers</p>
+        <p>Facebook support</p>
         <p class="note">React Native is a framework!</p>
+    </section>
+
+    <section class="slide compact">
+        <h2>Other Benefits</h2>
+        <p class="next">Quickly prototype layouts in a tight loop with UI designers</p>
+        <p  class="next">Reuse JS business logic code for the native app</p>
+        <p  class="next">Iteration without a compile cycle</p>
+
+    </section>
+
+    <section class="slide">
+          <a alt="from RN documentation" href="https://facebook.github.io/react-native/">
+              <img class="cover" src="pictures/using_rn.png" alt="">
+          </a>
     </section>
 
     <section class="slide">
@@ -78,6 +93,103 @@
         <a href="https://medium.com/appnroll-publication/switch-between-react-and-react-native-548267e1348a">
             <img class="cover" src="pictures/flux_architecture.png" alt="">
         </a>
+    </section>
+
+    <section class="slide compact">
+        <h2>Where can we start?</h2>
+        <p><a href="https://facebook.github.io/react-native/">Excellent documentation</a></p>
+        <p>Know how to write action creators and reducers</p>
+        <p>Have concepts for functional components, class components and containers</p>
+        <p class="note">React Native is a framework!</p>
+    </section>
+
+    <section class="slide compact">
+        <h2>Risks</h2>
+        <p class="next">Deploy might not work out</p>
+        <p class="next">Dynamic development of the technlology</p>
+        <p class="next">Finding libraries, dependecies</p>
+    </section>
+
+    <section class="slide compact">
+        <h2>Mobile is different from Web</h2>
+        <p class="next">Slower rebuids</p>
+        <p class="next">Deploy needs 3rd person approvement</p>
+        <p class="next">You need a stronger machine</p>
+    </section>
+
+    <section class="slide prism">
+        <h2>JS injection in WebView</h2>
+
+        <pre style="font-size: 25px;" class="language-javascript line-numbers">
+            <code>
+      &lt;Webview
+        {...props}
+        javaScriptEnabled
+        injectedJavaScript={injectedJavaScript}
+        source={source ? source : html ? { html } : url}
+        ref={x => {this.WebView = x;}}
+        onMessage={e => onMessage(e)}
+        /&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide prism">
+        <h2>JS injection in WebView</h2>
+        <pre style="font-size: 20px;" class="language-javascript line-numbers">
+            <code>
+    const injectedJavaScript = `(${String(() => {
+      document.querySelectorAll('a[href][target="_blank"]').forEach( link => {
+        link.onclick = (e) => {
+          e.preventDefault();
+          window.postMessage(JSON.stringify({
+            href: link.href
+        }))};
+      })
+    })})();`;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide compact">
+        <h2>Why not React Native?</h2>
+        <p class="next">In complex apps knowledge of native languages is indispensable</p>
+        <p class="next">Wins versus Objective-C / Java, but today it fights against Swift / Kotlin</p>
+        <p class="next"><a href="https://medium.com/airbnb-engineering/sunsetting-react-native-1868ba28e30a">Airbnb is dropping RN</a></p>
+    </section>
+
+    <section class="slide compact">
+        <h2>Why Airbnb is dropping RN?</h2>
+        <p class="next">Refactoring was too hard and it was too late to use TypeScript</p>
+        <p class="next">Libraries always support one platform in a better way</p>
+        <p class="next">They had to use and maintain their own fork of RN</p>
+        <p class="next">They ended up in maintaining 3 different versions of the app</p>
+    </section>
+
+    <section class="slide compact">
+        <h2>React Native for Mobile is like Rails for Web</h2>
+        <p>You'd love to have the problems that rise from this technology limitations, because this means you have millions of users and are rich enough to rewrite your app!</p>
+    </section>
+
+    <section class="slide compact">
+        <h2>Sources</h2>
+        <ol>
+            <li><a href="https://facebook.github.io/react-native/">React Native Documentation</a></li>
+            <li>Articles
+                <ul>
+                    <li><a href="http://www.appnroll.com/blog/switch-between-react-and-react-native/">Switch between React and React Native</a></li>
+                    <li><a href="https://medium.com/@azharuddin31/react-native-pass-data-to-webview-and-get-data-out-of-webview-792ffbe7eb75">Pass data to WebView and get data out of WebView</a></li>
+                    <li><a href="https://medium.com/appnroll-publication/a-business-perspective-react-native-4dd13fd1849c">A Business Perspective: React Native</a></li>
+                </ul>
+            </li>
+            <li>Tutorials
+                <ul>
+                    <li><a href="https://mastery.games/p/flexbox-zombies">Flexbox zombies</a></li>
+                    <li><a href="https://egghead.io/search?q=react%20native">Egg head tutorials</a></li>
+                    <li><a href="https://reactjs.org/docs/thinking-in-react.html">Thinking in react</a></li>
+                </ul>
+            </li>
+        </ol>
     </section>
 
     <section class="slide compact">
